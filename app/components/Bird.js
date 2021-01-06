@@ -1,19 +1,23 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
-const Bird = () => {
+const Bird = ({birdBottom, birdLeft}) => {
+
+  const birdWidth = 50
+  const birdHeight = 60
+
   return (
-    <View style={styles.bird}/>
+    <View style={{
+      position: "absolute",
+      backgroundColor: "blue",
+      width: birdWidth,
+      height: birdHeight,
+      //Adjust the centering of the bird
+      left: birdLeft - (birdWidth / 2),
+      bottom: birdBottom - (birdHeight / 2)
+    }}/>
   );
 }
 
-const styles = StyleSheet.create({
-  bird: {
-    position: "absolute",
-    backgroundColor: "blue",
-    width: 50,
-    height: 60
-  },
-});
 
 export default Bird;
